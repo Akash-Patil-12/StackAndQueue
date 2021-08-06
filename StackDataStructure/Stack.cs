@@ -27,6 +27,31 @@ namespace StackDataStructure
             Console.WriteLine("{0} inserted", node.data);
         }
         /// <summary>
+        /// Remove top element from stack
+        /// </summary>
+        internal void Pop()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("Stack is empty");
+            }
+            this.head = this.head.next;
+        }
+        /// <summary>
+        /// show top element
+        /// </summary>
+        public void Peek()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("Stack is empty");
+            }
+            else
+            {
+                Console.WriteLine("Peek element is :"+this.head.data);
+            }
+        }
+        /// <summary>
         /// Check stack is empty or not
         /// </summary>
         public void IsEmpty()
@@ -42,12 +67,30 @@ namespace StackDataStructure
         internal void ShowStack()
         {
             Node temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("Stack is empty");
+                return;
+            }
             while (temp != null)
             {
                 Console.Write(temp.data + " ");
                 temp = temp.next;
             }
             Console.WriteLine();
+        }
+        /// <summary>
+        /// Peek and Pop till Stack not empty
+        /// </summary>
+        public void PeekPopTillEmpty()
+        {
+            Node temp = this.head;
+            while (temp != null)
+            {
+                Peek();
+                Pop();
+                temp = temp.next;
+            }
         }
     }
 }

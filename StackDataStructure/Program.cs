@@ -12,7 +12,9 @@ namespace StackDataStructure
             stack.Push(56);
             Console.WriteLine("After Add stack is :");
             stack.ShowStack();
-            
+            stack.PeekPopTillEmpty();
+            Console.WriteLine("After Pop stack is :");
+            stack.ShowStack();
         }
     }
 }
